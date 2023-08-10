@@ -9,7 +9,14 @@
   <body>
     
     <script>
-      const randomNumber = Math.random;
+      const randomNumber = Math.random();
+      const guess = 'tails';
+
+      let result = randomNumber < 0.5 ? 'heads' : 'tails';
+      
+
+      alert(guess === result ? 'You Win' : 'You Lose');
+      console.log(randomNumber);
     </script>
   </body>
 </html>
