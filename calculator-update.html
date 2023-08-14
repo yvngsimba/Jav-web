@@ -86,14 +86,19 @@
   <button onclick="
     calculation = '';
     console.log('Calculator Reset.');
+    localStorage.removeItem('newCalculation');
   ">Clear</button>
+  
   <script>
-    let calculation = '';
+    let calculation = localStorage.getItem('newCalculation') || '';
 
     function updateCalculation(value) {
       calculation += value;
       console.log(calculation);
+      localStorage.setItem('newCalculation', calculation);
     }
+
+
   </script>
 </body>
 </html>
