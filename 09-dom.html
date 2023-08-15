@@ -7,22 +7,33 @@
     <title>Javascript DOM</title>
   </head>
   <body>
-    <button>hello</button>
-    <button class="js-button">Second Button</button>
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
 
+    <input type="text" placeholder="Cost of order">
+    
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+    
     <script>
-      document.querySelector('button');
-      console.log(document.body);
+      
+      function calculateTotal(){
+        const input = document.querySelector('input');
+        let cost = Number(input.value);
 
-      document.querySelector('.js-button');
-      const buttonElement = document.querySelector('.js-button');
+        if(cost < 40 ) {
+          cost += 10;
+        } else if(cost >= 40){
+          cost;
+        }
 
-      console.log(buttonElement);
-
-      /*
-      document.body.innerHTML = "hello";
-      document.title = "Good Job";
-      */
+        console.log(typeof cost);
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
     </script>
   </body>
 </html>
