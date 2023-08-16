@@ -30,14 +30,14 @@
       }
       function calculateTotal(){
         const input = document.querySelector('input');
-        let cost = Number(input.value);
+        let cost = Number(input.value) * 100;
 
-        if(cost < 40 ) {
-          cost += 10;
-        } else if(cost >= 40){
+        if(cost < 4000 ) {
+          cost += 1000;
+        } else if(cost >= 4000){
           cost;
         }
-        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        document.querySelector('.js-total-cost').innerHTML = `$${cost /100} `;
       }
     </script>
   </body>
