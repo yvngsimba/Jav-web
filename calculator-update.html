@@ -8,7 +8,9 @@
   <title>Calculator</title>
 </head>
 <body>
-  <p>Calculator</p>
+  <h1>Calculator</h1>
+
+  <p></p>
   
   <p>
     <button onclick="
@@ -75,7 +77,7 @@
     
     <button onclick="
       calculation = eval(calculation);
-      console.log(calculation);
+      displayLabel()
   ">=</button>
     
     <button onclick="
@@ -85,16 +87,21 @@
 
   <button onclick="
     calculation = '';
-    console.log('Calculator Reset.');
+    display.innerHTML = 'Calculator Reset.';
     localStorage.removeItem('newCalculation');
   ">Clear</button>
   
   <script>
     let calculation = localStorage.getItem('newCalculation') || '';
+    let display = document.querySelector('p');
 
+    displayLabel()
+    function displayLabel(){
+      display.innerHTML = `${calculation}`
+    }
     function updateCalculation(value) {
       calculation += value;
-      console.log(calculation);
+      displayLabel()
       localStorage.setItem('newCalculation', calculation);
     }
 
