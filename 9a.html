@@ -23,7 +23,9 @@
     <p></p>
     -->
 
-    <input type="text" placeholder="Name">
+    <input type="text" placeholder="Name" onkeydown="
+      onKeyEvent(event);
+    ">
     <button onclick="
       const input = document.querySelector('input');
       const output = document.querySelector('p');
@@ -42,6 +44,15 @@
       domButton2.innerHTML = '9b done!';
       console.log(domButton2);
       */
+
+      function onKeyEvent(event) {
+      if (event.key === 'Enter') {
+          const input = document.querySelector('input');
+          const output = document.querySelector('p');
+          
+          output.innerHTML = `Your name is : ${input.value}`;
+        }
+      }
     </script>
   </body>
 </html>
