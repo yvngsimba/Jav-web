@@ -12,6 +12,7 @@
     <button class="js-button">9b</button>
     -->
 
+    <!-- 9c
     <button onclick="
       document.querySelector('p').innerHTML = 'You chose:heads';
     ">heads</button>
@@ -20,7 +21,17 @@
       document.querySelector('p').innerHTML = 'You chose:tails';
     ">tails</button>
     <p></p>
+    -->
 
+    <input type="text" placeholder="Name">
+    <button onclick="
+      const input = document.querySelector('input');
+      const output = document.querySelector('p');
+      
+      output.innerHTML = `Your name is : ${input.value}`;
+    ">Submit</button>
+    <p></p>
+    
     <script>
       /* 9a & 9b
       let domButton = document.querySelector('button');
