@@ -11,7 +11,10 @@
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Orders over $40 = FREE shipping.</p>
 
-    <input type="text" placeholder="Cost of order">
+    <input type="text" placeholder="Cost of order" 
+      onkeydown="
+        onKeySubmission(event);
+      ">
     
     <button onclick="
       calculateTotal();
@@ -20,7 +23,11 @@
     <p class="js-total-cost"></p>
     
     <script>
-      
+      function onKeySubmission(event) {
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
       function calculateTotal(){
         const input = document.querySelector('input');
         let cost = Number(input.value);
@@ -30,8 +37,6 @@
         } else if(cost >= 40){
           cost;
         }
-
-        console.log(typeof cost);
         document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
       }
     </script>
