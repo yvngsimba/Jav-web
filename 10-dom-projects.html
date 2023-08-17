@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content=" Using the DOM to create better projects">
+  <title>DOM manipulation</title>
+  <style>
+    body {
+      font-family: arial;
+    }
+    
+    button {
+      background-color:black ;
+      color: white;
+      font-weight: bold;
+      border-radius: 40px;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .is-subscribed{
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <p>YouTube Subscribe Button</p>
+
+  <button onclick="
+    subscribeButton()
+  ">Subscribe</button>
+
+  
+  <script>
+      function subscribeButton(){
+        const buttonElement =  document.querySelector('button');
+
+        if (buttonElement.innerHTML === 'Subscribe') {
+          buttonElement.innerHTML = 'Subscribed';
+          buttonElement.classList.add('is-subscribed');
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+          buttonElement.classList.remove('is-subscribed');
+        }
+      }
+  </script>
+</body>
+</html>
