@@ -38,7 +38,7 @@
       calculateTotal();
     ">Calculate</button>
 
-    <p class="js-total-cost"></p>
+    <p class = "js-total-cost"></p>
     
     <script>
       function onKeySubmission(event) {
@@ -50,12 +50,19 @@
         const input = document.querySelector('input');
         let cost = Number(input.value) * 100;
 
-        if(cost < 4000 ) {
+        if(cost > 0 && cost < 4000 ) {
           cost += 1000;
         } else if(cost >= 4000){
           cost;
         }
+
         document.querySelector('.js-total-cost').innerHTML = `$${cost /100} `;
+
+        if (cost < 0) {
+          document.querySelector('.js-total-cost').innerHTML = 'Error: cost cannot be less than $0';
+          document.querySelector('.js-total-cost').style.color = 'red';
+          return;
+        }
       }
     </script>
   </body>
