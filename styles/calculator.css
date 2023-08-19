@@ -1,0 +1,29 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  border: none;
+  font-family: arial;
+  font-size: 26px;
+  color: white;
+  background-color: #333333;
+  margin-right: 5px;
+}
+
+button:nth-child(4n) {
+  background-color: rgb(254, 160, 10);
+}
+
+.reset {
+  font-size: 16px;
+}
+
+p:nth-child(1) {
+  font-size: 45px;
+  margin: 10px; 
+}
