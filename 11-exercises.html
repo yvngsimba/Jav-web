@@ -16,6 +16,8 @@
     */
     //myArray[myArray.length - 1] = 99;
     //const array = [1, 20 , 22, 24, 40];
+    
+    /* 11b.
     const array = ['hello', 'bye' , 'hi', 'cya', 'gm'];
     
     getLastValue(array);
@@ -25,7 +27,93 @@
     }
 
     console.log(getLastValue(array));
+    */
 
+    /* 11c.
+    //const array = ['hello', 'bye' , 'hi', 'cya'];
+    const array = [1, 20 , 22, 24, 40, 99, 89 ,77];
+    
+
+    function arraySwap(array) {
+      const lastValue = array[array.length - 1];
+      const firstValue = array[0];
+      array[0] = lastValue;
+      array[array.length - 1] = firstValue;
+      return array;
+    }
+    
+    console.log(arraySwap(array));
+    */
+
+    /* 11d.
+    for (let i = 0; i <= 10; i += 2 ) {
+      console.log(i);
+    }
+    */
+
+    /* 11f.
+    let i = 0; 
+    while (i <= 10) {
+      console.log(i);
+      i += 2;
+    }
+    
+    let i = 5;
+    
+    while (i >= 0) {
+      console.log(i);
+      i--;
+    }
+    */
+
+    /* 11e.
+    for (let i = 5; i >= 0; i--) {
+      console.log(i);
+    }
+    */
+
+    /*11g.
+    let arr = [1, 2, 3];
+
+    for (let i = 0; i < arr.length; i++) {
+      arr[i] += 1
+    }
+    console.log(arr);
+    */
+    
+    /* 11h.
+    function addOne(array) {
+
+      for (let i = 0; i < array.length; i++) {
+        array[i] += 1
+      }
+      return array;
+    }
+    console.log(addOne([-2, -1, 0, 99]));
+    */
+
+    /* 11i.
+    function addNum(array, num){
+      for (let i = 0; i < array.length; i++){
+        array[i] += num;
+      }
+      return array;
+    }
+    console.log(addNum([2, 4, 6], 5 ));
+    */
+
+    /*11j
+    function addArrays(array1, array2) {
+      const result = [];
+
+      for (let i = 0; i < array1.length; i++){
+        result.push(array1[i] + array2[i]);
+      }
+      return result;
+    }
+
+    console.log(addArrays([1, 2, 3], [5, 10, 15]));
+    */
   </script>
 </body>
 </html>
