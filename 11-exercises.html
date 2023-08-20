@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arrays and Loop">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    /* 11a.
+    const myArray = [10, 20 , 30];
+    myArray[2] = 35;
+    console.log(myArray);
+    */
+    //myArray[myArray.length - 1] = 99;
+    //const array = [1, 20 , 22, 24, 40];
+    const array = ['hello', 'bye' , 'hi', 'cya', 'gm'];
+    
+    getLastValue(array);
+    function getLastValue(array) {
+      lastValue = array[array.length - 1];
+      return lastValue;
+    }
+
+    console.log(getLastValue(array));
+
+  </script>
+</body>
+</html>
