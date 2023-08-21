@@ -114,6 +114,47 @@
 
     console.log(addArrays([1, 2, 3], [5, 10, 15]));
     */
+
+    /*
+    function countPositive(nums) {
+      result = 0;
+
+      for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+          result++
+        }
+      }
+      return result;
+    }
+    console.log(countPositive([-1, 2, -3, 9]));
+    */
+
+    // 11l & m.
+    function minMax(nums) {
+
+      let result = {
+        Max: null,
+        Min: null
+      };
+      
+      for (let i = 0; i < nums.length; i++) {
+        const value = nums[i];
+
+        if (value > result.Max || result.Max === null) {
+          result.Max = value;
+        }
+          
+        if (value < result.Min || result.Min === null) {
+          result.Min = value;
+        }
+      }
+      return result;
+    } 
+
+    console.log(minMax([3]));
+    //
+
+
   </script>
 </body>
 </html>
