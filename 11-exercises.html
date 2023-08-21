@@ -129,7 +129,7 @@
     console.log(countPositive([-1, 2, -3, 9]));
     */
 
-    // 11l & m.
+    /* 11l & m.
     function minMax(nums) {
 
       let result = {
@@ -151,9 +151,54 @@
       return result;
     } 
 
-    console.log(minMax([3]));
-    //
+    console.log(minMax([2, 3, 4]));
+    */
 
+    /*11n.
+    function countWords(words) {
+
+      let result = {
+        Apple: 0,
+        Grape: 0
+      };
+
+      for (let i = 0; i < words.length; i++) {
+        const value = words[i];
+
+        if (value === 'apple') {
+          result.Apple++;
+        }
+        if (value === 'grape') {
+          result.Grape++;
+        }
+        
+      }
+      return result;
+    }
+
+    console.log(countWords([ 'apple', 'grape', 'grape', 'apple', 'grape', 'grape', 'apple', 'grape', 'grape',]));
+    */
+
+    // 11n. alt
+
+    function countWords(words) {
+
+    let result = {};
+
+    for (let i = 0; i < words.length; i++) {
+      const value = words[i];
+
+      if (!result[words]) {
+        result[words] = 1
+      } else {
+        result[words]++;
+      }
+      
+    }
+    return result;
+    }
+
+    console.log(countWords([ 'apple', 'grape', 'grape', 'apple', 'grape', 'grape', 'apple', 'grape', 'grape',]));
 
   </script>
 </body>
