@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content=" Todo List">
   <title>Todo List</title>
+  <link rel="stylesheet" href="/styles/11-todo.css">
   <style>
     body {
       font-family: arial;
@@ -13,18 +14,18 @@
 </head>
 <body>
   <p>Todo List Practice 1</p>
-  <input type="text" placeholder="Todo name" 
+  <input class="js-todo" type="text" placeholder="Todo name" 
   onkeydown="
     if (event.key === 'Enter') {
       addTodo();
   }">
+  <input class="js-duedate" type="date">
   
-  <button 
-  onclick="
+  <button class="add-button" onclick ="
     addTodo();
   ">Add</button>
 
-  <div></div>
+  <div class="todo-grid"></div>
   
   <script src="/scripts/11-todo-list.js"></script>
 </body>
