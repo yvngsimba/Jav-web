@@ -30,7 +30,7 @@ function renderTodoList() {
     todoListHTML += html; 
   }
 
-  const divElement = document.querySelector('div');
+  const divElement = document.querySelector('.todo-grid');
   divElement.innerHTML = todoListHTML;
 }
 

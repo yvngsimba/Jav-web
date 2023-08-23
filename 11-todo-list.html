@@ -14,17 +14,19 @@
 </head>
 <body>
   <p>Todo List Practice 1</p>
-  <input class="js-todo" type="text" placeholder="Todo name" 
-  onkeydown="
-    if (event.key === 'Enter') {
-      addTodo();
-  }">
-  <input class="js-duedate" type="date">
-  
-  <button class="add-button" onclick ="
-    addTodo();
-  ">Add</button>
 
+  <div class="todo-input-grid">
+    <input class="js-todo" type="text" placeholder="Todo name" 
+    onkeydown="
+      if (event.key === 'Enter') {
+        addTodo();
+    }">
+    <input class="js-duedate" type="date">
+    
+    <button class="add-button" onclick ="
+      addTodo();
+    ">Add</button>
+  </div>
   <div class="todo-grid"></div>
   
   <script src="/scripts/11-todo-list.js"></script>

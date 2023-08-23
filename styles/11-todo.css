@@ -1,16 +1,16 @@
-.todo-grid{
+.todo-grid, .todo-input-grid{
   display: grid;
-  grid-template-columns: 185px 120px 100px;
-  grid-template-rows:  35px auto;
-  gap:12px;
+  grid-template-columns: 185px 120px 85px;
+  grid-row: 0px;
+  align-items: center;
+  gap:10px 10px;
 }
 
 .add-button {
   background-color: rgb(27, 125, 27);
   color: white;
   border: none;
-  padding: 10px 30px;
-  margin-left: 5px;
+  padding: 10px 25px;
 }
 
 .delete-button {
@@ -30,5 +30,4 @@
   padding: 9px;
   border: 1px solid grey;
   border-radius: 2px;
-  margin-left: 5px;
 }
