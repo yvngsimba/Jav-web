@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(25, 25, 25);
+  font-family: arial;
+}
+
+p {
+  color: white;
+}
+
+.case {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 3px solid white;
+  margin-right: 15px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+img {
+  height: 50px;
+}
+
+.reset {
+  border-radius: 0;
+  border: none;
+  padding: 8px 15px;
+}
+
+.result {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.moves {
+  margin-bottom: 50px;
+}
