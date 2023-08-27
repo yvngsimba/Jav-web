@@ -11,6 +11,27 @@ function updateScoreElement() {
 
 updateScoreElement();
 
+let isAutoPlaying = false;
+let intervaleId;
+
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervaleId = setInterval(function(){
+      const playerMove = pickComputerMove();
+
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  
+  } else {
+      clearInterval(intervaleId);
+      isAutoPlaying = false; 
+  }
+} 
+  
+
+
 function playGame(playerMove) {
 let result = '';
 const computerMove = pickComputerMove();
@@ -81,3 +102,4 @@ if (randomNumber >= 0 && randomNumber < 1 / 3) {
 } 
 return computerMove;
 }
+
