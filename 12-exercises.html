@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced Functions">
+  <title>(2) New Messages</title>
+</head>
+<body>
+
+  <button class="js-button" onclick=" 
+    nameChange();
+  ">Start</button>
+  
+  <br>
+  <br>
+
+  <button class="js-button2" onclick="
+    addedText();
+  ">Add to cart</button>
+
+  <p></p>
+
+  <br>
+  <br>
+
+  <button class="js-add" onclick="
+    num++;
+    titleChange();
+  ">Add</button>
+  
+  <button class="js-sub" onclick="
+    num--;
+    titleChange();
+  ">Remove</button>
+  
+  <script>
+    /* 12a. , 12b. 
+    const add = function() {
+      console.log(2+3);
+    }
+
+    function runTwice(fun) {
+      fun();
+      fun();
+    }
+
+    runTwice(function(){
+      console.log('12b');
+    });
+
+    runTwice(add);
+    */
+
+    // 12c. , 12d.
+    function nameChange() {
+      const button = document.querySelector('.js-button');
+
+      button.innerHTML = 'Loading...';
+
+      setTimeout(function() {
+      button.innerHTML = 'Finished!';
+      }, 1000);
+    }
+    //  12c. , 12d.
+    
+    // 12e.
+
+    let refresh;
+    function addedText(){
+      const text = document.querySelector('p');
+      
+      if (refresh) {
+        clearTimeout(refresh);
+      } 
+
+      text.innerHTML = 'Added';
+
+      refresh = setTimeout(function() {
+        text.innerHTML = '';
+      }, 2000);
+    }
+    // 12e.
+
+    // 12g. 12h. 12i.
+    const title = document.querySelector('title');
+    let num = 2;
+
+    function titleChange() {
+
+      let isApp = false;
+      
+
+      if (num < 0 ) {
+        num = 0;
+      } else {
+        const intervalId = setInterval(function() {
+            if (isApp) {
+              title.innerHTML = 'App';
+            } else {
+                title.innerHTML = `(${num}) New Messages`;
+            } 
+          isApp = !isApp;
+
+          if (num === 0) {
+            clearInterval(intervalId);
+            title.innerHTML = 'App';
+          }
+        }, 1000);
+      }
+    }
+    titleChange();
+  </script>
+</body>
+</html>
