@@ -58,8 +58,8 @@
 
       button.innerHTML = 'Loading...';
 
-      setTimeout(function() {
-      button.innerHTML = 'Finished!';
+      setTimeout(() => {
+        button.innerHTML = 'Finished!';
       }, 1000);
     }
     //  12c. , 12d.
@@ -76,7 +76,7 @@
 
       text.innerHTML = 'Added';
 
-      refresh = setTimeout(function() {
+      refresh = setTimeout(() => {
         text.innerHTML = '';
       }, 2000);
     }
@@ -94,7 +94,7 @@
       if (num < 0 ) {
         num = 0;
       } else {
-        const intervalId = setInterval(function() {
+        const intervalId = setInterval(() => {
             if (isApp) {
               title.innerHTML = 'App';
             } else {
