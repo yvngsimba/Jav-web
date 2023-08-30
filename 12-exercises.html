@@ -8,26 +8,19 @@
 </head>
 <body>
 
-  <button class="js-button" onclick=" 
-    nameChange();
-  ">Start</button>
+  <button class="js-button">Start</button>
   
   <br>
   <br>
 
-  <button class="js-button2" onclick="
-    addedText();
-  ">Add to cart</button>
+  <button class="js-button2">Add to cart</button>
 
   <p></p>
 
   <br>
   <br>
 
-  <button class="js-add" onclick="
-    num++;
-    titleChange();
-  ">Add</button>
+  <button class="js-add">Add</button>
   
   <button class="js-sub" onclick="
     num--;
@@ -53,15 +46,16 @@
     */
 
     // 12c. , 12d.
-    function nameChange() {
-      const button = document.querySelector('.js-button');
+    document.querySelector('.js-button')
+      .addEventListener('click', () => {
+        const button = document.querySelector('.js-button');
 
-      button.innerHTML = 'Loading...';
+        button.innerHTML = 'Loading...';
 
-      setTimeout(() => {
-        button.innerHTML = 'Finished!';
-      }, 1000);
-    }
+        setTimeout(() => {
+          button.innerHTML = 'Finished!';
+        }, 1000);
+      });
     //  12c. , 12d.
     
     // 12e.
@@ -80,6 +74,12 @@
         text.innerHTML = '';
       }, 2000);
     }
+
+    document.querySelector('.js-button2') 
+      .addEventListener('click', () =>{
+        addedText();
+      });
+    
     // 12e.
 
     // 12g. 12h. 12i.
@@ -110,6 +110,16 @@
       }
     }
     titleChange();
+
+    document.querySelector('js-add')
+      .addEventListener('click', () => {
+        const title = document.querySelector('js-add');
+        if (num === 0) {
+            clearInterval(intervalId);
+            title.innerHTML = 'App';
+          }
+        }, 1000);
+      
   </script>
 </body>
 </html>
