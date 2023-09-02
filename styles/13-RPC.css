@@ -42,3 +42,6 @@ img {
   margin-bottom: 50px;
 }
 
+.js-yes, .js-no {
+  cursor: pointer;
+}

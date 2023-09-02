@@ -31,6 +31,27 @@ function autoPlay() {
       document.querySelector('.js-auto-button').innerHTML = 'Auto Play'; 
   }
 } 
+
+function extraConfirmation() {
+  const confirmationElement = document.querySelector('.js-confirmation');
+
+  confirmationElement.innerHTML = 'Are you sure you want to reset the score? <button class = "js-yes">Yes</button> <button class = "js-no">No</button>';
+  
+  confirmationElement.querySelector('.js-yes')
+    .addEventListener('click', () => {
+      score.Wins = 0,
+      score.Losses = 0, 
+      score.Ties = 0;
+      localStorage.removeItem('score'); 
+      updateScoreElement();
+      confirmationElement.innerHTML = '';
+    });
+
+    confirmationElement.querySelector('.js-no')
+    .addEventListener('click', () => {
+      confirmationElement.innerHTML = '';
+    });
+}
   
 document.querySelector('.js-rock-button')
   .addEventListener('click',() => {
@@ -54,11 +75,7 @@ document.querySelector('.js-auto-button')
 
 document.querySelector('.js-reset-button')
   .addEventListener('click', () => {
-    score.Wins = 0,
-    score.Losses = 0, 
-    score.Ties = 0;
-    localStorage.removeItem('score'); 
-    updateScoreElement();
+    extraConfirmation();
   });
 
 document.body.addEventListener('keydown', (event) => {
@@ -69,9 +86,13 @@ document.body.addEventListener('keydown', (event) => {
   } else if (event.key === 's') {
       playGame('scissors');
   } else if (event.key === 'a') {
-    autoPlay();
+      autoPlay();
+  } else if (event.key === 'Backspace') {
+      extraConfirmation();
   }
 });
+
+
 
 function playGame(playerMove) {
 let result = '';
