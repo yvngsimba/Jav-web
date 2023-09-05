@@ -1,0 +1,21 @@
+button {
+  height: 100px;
+  aspect-ratio: 1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 300px;
+}
+
+h1 {
+  margin-left: 90px;
+  text-decoration: underline;
+}
+
+div {
+  margin: 0px;
+  display: inline-block;
+}
