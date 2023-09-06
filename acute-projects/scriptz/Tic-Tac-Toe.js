@@ -6,44 +6,69 @@ let board =
   ["","",""]
 ];
 let gameWon = false;
-let gameActive = false;
+let gameActive = true;
+
 
 function makeMove(row, col) {
 
-  if(board[row][col] === '') {
-    board[row][col] === currentPlayer;
-
+  if(board[row][col] === '' && gameActive) {
     const button = document.querySelector(`.cell-${row}-${col}`);
     button.innerHTML = currentPlayer;
+    board[row][col] = currentPlayer;
 
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; 
-    endGame(row, col);
+    if (endGame(row, col)) {
+      displayWinMessage(currentPlayer)
+      gameActive = false;
+    } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; 
+    }
+    return button
   }
 }
 
-function checkRow(row) {
-  return board[row].every(cell => cell === currentPlayer);
-}
+function endGame(row, col){
+  const currentPlayerSymbol = board[row][col];
 
-function checkCol(col) {
-  return board[col].every(row => row[col] === currentPlayer);
-}
+  if (board[row].every(cell => cell === currentPlayerSymbol)) {
+    return true;
+  }
 
-function checkDiagonal(row, col) {
+  if (board.every(row => row[col] === currentPlayerSymbol)) {
+    return true;
+  }
+
   if (row === col || row + col === 2) {
-    const mainDiagonal = board.every((row, index) => row[index] === currentPlayer);
-    const antiDiagonal = board.every((row, index) => row[2 - index] === currentPlayer);
+    const mainDiagonal = board.every((row, index) => row[index] === currentPlayerSymbol);
+    const antiDiagonal = board.every((row, index) => row[2 - index] === currentPlayerSymbol);
+    return mainDiagonal || antiDiagonal;
   }
   return false
 }
 
-function endGame(){
-  if (checkRow(row) || checkCol(col) || checkDiagonal(row, col)) {
-    alert(`${currentPlayer} wins!`)
-    gameWon = true;
-  }
+function displayWinMessage(currentPlayer) {
+  alert(`${currentPlayer} wins!`);
 }
 
-makeMove(0,0);
+const resetButton = document.querySelector('.js-reset')
 
-makeMove(0,0);
+resetButton.addEventListener('click', () => {
+
+  let board = 
+  [
+    ["","",""],
+    ["","",""],
+    ["","",""]
+  ];
+
+  let gameWon = false;
+  let gameActive = true;
+
+  currentPlayer = 'X';
+
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((button) => {
+    button.innerHTML = '';
+  });
+})
+
+

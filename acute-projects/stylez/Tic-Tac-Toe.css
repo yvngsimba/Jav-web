@@ -1,6 +1,12 @@
 button {
   height: 100px;
   aspect-ratio: 1;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 30px 10px rgba(109, 109, 53, 0.742);
+  cursor: pointer;
 }
 
 .board {
@@ -18,4 +24,21 @@ h1 {
 div {
   margin: 0px;
   display: inline-block;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: grid;
+  justify-content: center;
+}
+
+.reset {
+  height: 50px;
+  display: flex;
+  margin-left:40%;
+  margin-top: 50px;
+  padding: 15px;
+  font-size: 1rem;
+  box-shadow: 0 0 30px 10px rgba(143, 24, 20, 0.742);
 }
