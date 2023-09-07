@@ -22,7 +22,7 @@ function makeMove(row, col) {
     } else {
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; 
     }
-    return button
+    return 
   }
 }
 
